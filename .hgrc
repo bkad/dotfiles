@@ -1,0 +1,11 @@
+[ui]
+username = Kevin Le <solnovus@gmail.com>
+verbose = True
+ssh = ssh -C
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, help
+[extensions]
+color =
+pager =
+
