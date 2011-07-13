@@ -1,0 +1,31 @@
+#### Config ####
+
+config defaultToCurrentScreen true
+config secondsBetweenRepeat 0.1
+config focusCheckWidthMax 1500
+config focusPreferSameApp false
+
+#### Aliases ####
+alias halfXhalfY screenSizeX/2;screenSizeY/2
+alias fullXfullY screenSizeX;screenSizeY
+alias fullXhalfY screenSizeX;screenSizeY/2
+alias halfXfullY screenSizeX/2;screenSizeY
+
+#### Bindings ####
+
+bind pad1:ctrl;cmd corner bottom-left resize:${halfXhalfY}
+bind pad2:ctrl;cmd corner bottom-left resize:${fullXhalfY}
+bind pad3:ctrl;cmd corner bottom-right resize:${halfXhalfY}
+bind pad4:ctrl;cmd corner top-left resize:${halfXfullY}
+bind pad5:ctrl;cmd corner top-left resize:${fullXfullY}
+bind pad6:ctrl;cmd corner top-right resize:${halfXfullY}
+bind pad7:ctrl;cmd corner top-left resize:${halfXhalfY}
+bind pad8:ctrl;cmd corner top-left resize:${fullXhalfY}
+bind pad9:ctrl;cmd corner top-right resize:${halfXhalfY}
+
+# Select windows positionally
+bind h:alt focus left
+bind l:alt focus right
+bind j:alt focus down
+bind k:alt focus up
+bind m:alt focus behind
