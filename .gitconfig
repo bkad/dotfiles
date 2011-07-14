@@ -1,6 +1,6 @@
 [user]
   email = solnovus@gmail.com
-  name = "Kevin Le"
+  name = Kevin Le
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/bin/vim
