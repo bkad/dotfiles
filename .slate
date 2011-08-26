@@ -23,6 +23,16 @@ bind pad7:ctrl;cmd corner top-left resize:${halfXhalfY}
 bind pad8:ctrl;cmd corner top-left resize:${fullXhalfY}
 bind pad9:ctrl;cmd corner top-right resize:${halfXhalfY}
 
+bind 1:ctrl;cmd corner bottom-left resize:${halfXhalfY}
+bind 2:ctrl;cmd corner bottom-left resize:${fullXhalfY}
+bind 3:ctrl;cmd corner bottom-right resize:${halfXhalfY}
+bind 4:ctrl;cmd corner top-left resize:${halfXfullY}
+bind 5:ctrl;cmd corner top-left resize:${fullXfullY}
+bind 6:ctrl;cmd corner top-right resize:${halfXfullY}
+bind 7:ctrl;cmd corner top-left resize:${halfXhalfY}
+bind 8:ctrl;cmd corner top-left resize:${fullXhalfY}
+bind 9:ctrl;cmd corner top-right resize:${halfXhalfY}
+
 # Select windows positionally
 bind h:alt focus left
 bind l:alt focus right
