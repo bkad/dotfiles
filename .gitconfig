@@ -25,6 +25,8 @@
 	autosetuprebase = always
 [push]
 	default = tracking
+[fetch]
+  recurseSubmodules = true
 [diff]
   renames = true
 [alias]
