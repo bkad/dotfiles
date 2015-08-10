@@ -1,3 +1,7 @@
 *.swp
 *.swo
+*.swn
+*.pyc
 .gondor
+.DS_Store
+terraform.tfvars
