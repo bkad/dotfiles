@@ -29,6 +29,8 @@
   recurseSubmodules = true
 [diff]
   renames = true
+[rebase]
+  autosquash = true
 [alias]
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f`"
   add-unmerged  = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
@@ -73,3 +75,4 @@
   peeps = !git log --pretty=format:%aN | sort | uniq -c | sort -rn
   graph = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
+  delete-merged = !git branch --merged | grep -v "\\*" | xargs git branch -d
