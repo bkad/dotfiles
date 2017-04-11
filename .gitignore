@@ -1,7 +1,10 @@
 *.swp
 *.swo
 *.swn
+*.swl
+*.swm
 *.pyc
 .gondor
 .DS_Store
 terraform.tfvars
+.ignore
