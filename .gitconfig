@@ -3,7 +3,7 @@
   name = Kevin Le
 [core]
   excludesfile = ~/.gitignore
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/vim
 [color]
   branch = auto
   diff = auto
@@ -21,6 +21,9 @@
   added = yellow
   changed = green
   untracked = cyan
+[commit]
+  gpgsign = true
+  signingkey = 85C74F7A
 [branch]
   autosetuprebase = always
 [push]
@@ -28,7 +31,7 @@
 [fetch]
   recurseSubmodules = true
 [diff]
-  renames = true
+  compaction-heuristic = true
 [rebase]
   autosquash = true
 [alias]
@@ -60,10 +63,6 @@
 
   sup = !git submodule sync && git submodule update --init
 
-  # install t first: http://github.com/sjl/t
-  todo = !python ~/personal/t/t.py --task-dir "$(git rev-parse --show-toplevel)" --list TODO
-  bug = !python ~/personal/t/t.py --task-dir "$(git rev-parse --show-toplevel)" --list BUGS
-
   alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || [ $# = 1 ] && [ $1 = \"--list\" ] && git config --list | grep \"alias\\.\" | sed \"s/^alias\\.\\([^=]*\\)=\\(.*\\).*/\\1@@@@=>@@@@\\2/\" | sort | column -ts \"@@@@\" && exit 0 || echo \"usage: git alias <new alias> <original command>\\n       git alias --list\" >&2 && exit 1' -"
   ignore = "!sh -c '([ $# = 2 ] && ([ \"$1\" = \"--local\" ] && echo \"$2\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\" || ([ \"$2\" = \"--local\" ] && echo \"$1\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\"))) || ([ $# = 1 ] && (([ \"$1\" == \"--list\" ] && git ls-files -i --exclude-standard) || (([ ! -e .gitignore ] && touch .gitignore || echo \"$(cat .gitignore)\" > .gitignore) && echo \"$1\" >> .gitignore))) || echo \"usage: git ignore <file>\\n       git ignore --local <file>\\n       git ignore --list\" >&2 && exit 1' -"
 
@@ -76,3 +75,16 @@
   graph = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
   delete-merged = !git branch --merged | grep -v "\\*" | xargs git branch -d
+  fixup = commit --fixup HEAD
+  amend = commit --amend
+[pager]
+  diff = diff-highlight | less
+  show = diff-highlight | less
+  log = diff-highlight | less
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[interactive]
+  diff-filter = diff-highlight
